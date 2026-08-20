@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #070713;
+  color: #f7f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #d600ff;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070713;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343447;
+  border-radius: 999px;
+}
+
+/* .star-field {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(214, 0, 255, .10), transparent 24%),
+    radial-gradient(circle at 85% 58%, rgba(59, 130, 246, .10), transparent 26%),
+    radial-gradient(circle at 45% 80%, rgba(139, 92, 246, .09), transparent 25%),
+    #070713;
+  position: relative;
+  overflow: hidden;
+}
+
+.star-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .7;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1.5px);
+  background-size: 125px 125px, 191px 191px;
+  background-position: 0 0, 37px 71px;
+} */
+
+.container-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section-title {
+  @apply text-center text-2xl font-extrabold tracking-tight md:text-3xl;
+}
+
+.section-subtitle {
+  @apply mx-auto mt-3 max-w-2xl text-center text-xs leading-6 text-slate-400 md:text-sm;
+}
+
+.glow-text {
+  text-shadow: 0 0 22px rgba(214,0,255,.35);
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #9ca3af 8%, #9ca3af 92%, transparent);
+}
+
+.fade-up {
+  animation: fadeUp .7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
